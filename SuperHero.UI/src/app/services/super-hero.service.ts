@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { SuperHero } from '../models/super-hero';
 
 @Injectable({
@@ -6,7 +8,11 @@ import { SuperHero } from '../models/super-hero';
 })
 export class SuperHeroService {
 
-  constructor() { 
+  //we get this in swagger, by running the SuperHero_backend on Visual Studio
+  url = "https://localhost:7132/api/SuperHero'";
+
+  //inject the HttpClient class
+  constructor(private http : HttpClient) { 
     
   }
 
@@ -24,17 +30,23 @@ export class SuperHeroService {
       Instead, it relies on TypeScript's type inference to determine the return type based on the body of the method. 
       This means that the method could potentially return a different type of object, but the compiler will assume that 
       the return type is SuperHero[].
+
+      An Observable is an object that can have many observers and when it changes, it can let
+      the observers know by using the subscribe method
+
     */
-      public getSuperHeroes() : SuperHero[] {
+      public getSuperHeroes() : Observable<SuperHero[]> {
+        return this.http.get<SuperHero[]>('https://localhost:7132/api/SuperHero')
+        /*
         let hero = new SuperHero();
         hero.id = 1;
         hero.name = "Spider man";
         hero.firstName = "Peter";
         hero.lastName = "Parker";
         hero.place = "New York";
-
+        */
         //return the hero as an array
-        return [hero];
+        //return [hero];
       }
 
 

@@ -31,10 +31,13 @@ export class AppComponent {
     On the other hand, ngOnInit is an Angular lifecycle hook that is called after the constructor when the 
     component is initialized. It is used to perform any additional initialization required by the component, 
     such as fetching data or subscribing to events
+
+    With the subscribe method, we get a result.
     */
     ngOnInit(): void {
-      this.heroes = this.superHeroService.getSuperHeroes();
-      console.log(this.heroes);
+      this.superHeroService.getSuperHeroes().subscribe(result =>{
+        this.heroes = result;
+      });
       
     }
     
