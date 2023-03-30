@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Super Hero Name</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Place</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!--Use the heroes property in app.component.ts to get the information-->
+    <tr *ngFor="let hero of heroes">
+      <!--Then, we use interpolation as method of Data Binding to get the information from app.component.ts-->
+      <th scope="row">{{hero.id}}</th>
+      <td>{{hero.name}}</td>
+      <td>{{hero.firstName}}</td>
+      <td>{{hero.lastName}}</td>
+      <td>{{hero.place}}</td>
+    </tr>
+  </tbody>
+</table>
