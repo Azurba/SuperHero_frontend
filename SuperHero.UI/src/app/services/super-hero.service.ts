@@ -34,6 +34,8 @@ export class SuperHeroService {
       An Observable is an object that can have many observers and when it changes, it can let
       the observers know by using the subscribe method
 
+      The subscribe method is on the app.component.ts
+
     */
       public getSuperHeroes() : Observable<SuperHero[]> {
         return this.http.get<SuperHero[]>('https://localhost:7132/api/SuperHero')
