@@ -1,3 +1,7 @@
+
+<button (click)="initNewHero()">Create new Hero</button>
+
+<!--Table displaying all the heros in our DB-->
 <table class="table">
   <thead>
     <tr>
@@ -6,6 +10,7 @@
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
       <th scope="col">Place</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +22,11 @@
       <td>{{hero.firstName}}</td>
       <td>{{hero.lastName}}</td>
       <td>{{hero.place}}</td>
+      <!--When edit btn is clicked, it is going to call the editHero in the component-->
+      <td><button (click)="editHero(hero)">Edit</button></td>
     </tr>
   </tbody>
 </table>
+
+<!--This is bound to the edit-hero.component throught the @Input property-->
+<app-edit-hero [hero]="herotoEdit" (heroesUpdated)="updateHeroList($event)"></app-edit-hero>

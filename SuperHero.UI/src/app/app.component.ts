@@ -12,6 +12,8 @@ export class AppComponent {
   //variable heros of type SuperHero [] and initilized to empty
   heroes: SuperHero[] = []
 
+  herotoEdit?: SuperHero;
+
   //Dependency injection: inject the SuperHeroService to the constructor
   constructor(private superHeroService : SuperHeroService) {
 
@@ -38,7 +40,19 @@ export class AppComponent {
       this.superHeroService.getSuperHeroes().subscribe(result =>{
         this.heroes = result;
       });
-      
+    }
+
+    updateHeroList(heroes: SuperHero[]){
+      this.heroes = heroes;
+    }
+
+    initNewHero(){
+      this.herotoEdit = new SuperHero();
+    }
+
+    //This will
+    editHero(hero:SuperHero){
+      this.herotoEdit = hero;
     }
     
 }

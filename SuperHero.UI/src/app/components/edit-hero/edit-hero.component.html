@@ -1,1 +1,36 @@
-<p>edit-hero works!</p>
+
+
+<!--This page is only going to be displayed/trigger when we clicked on the edit
+    button of the app.component.html. The button will trigger the function editHero on the component.
+    The editHero function will put data in the property herotoEdit
+    herotoEdit property if bound to the @Input() hero property of the edit-hero.component.ts
+    when the @Input() hero has a value, then the ngIf below will trigger an the following code can be
+    loaded
+-->
+<!-- if a hero exists...-->
+<div *ngIf="hero">
+    <!-- Display its name...-->
+    <h2>{{hero.name}}</h2>
+    <!-- Using ngModel to two-way bind the properties-->
+    <div>
+        Name:
+        <input type="text" [(ngModel)]="hero.name" placeholder="Name">
+    </div>
+    <div>
+        First Name:
+        <input type="text" [(ngModel)]="hero.firstName" placeholder="fName">
+    </div>
+    <div>
+        Last Name:
+        <input type="text" [(ngModel)]="hero.lastName" placeholder="lName">
+    </div>
+    <div>
+        Place:
+        <input type="text" [(ngModel)]="hero.place" placeholder="place">
+    </div>
+    <!--Display this button only if the hero.id exists-->
+    <button (click)="updateHero(hero)" *ngIf="hero.id">Save</button>
+    <button (click)="deleteHero(hero)" *ngIf="hero.id">Delete</button>
+    <button (click)="createHero(hero)" *ngIf="!hero.id">Create</button>
+
+</div>

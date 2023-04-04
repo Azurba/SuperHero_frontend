@@ -51,5 +51,17 @@ export class SuperHeroService {
         //return [hero];
       }
 
+      public updateHero(hero: SuperHero) : Observable<SuperHero[]> {
+        return this.http.put<SuperHero[]>('https://localhost:7132/api/SuperHero', hero)
+      }
+
+      public createHero(hero: SuperHero) : Observable<SuperHero[]> {
+        return this.http.post<SuperHero[]>('https://localhost:7132/api/SuperHero', hero)
+      }
+
+      public deleteHero(hero: SuperHero) : Observable<SuperHero[]> {
+        return this.http.delete<SuperHero[]>('https://localhost:7132/api/SuperHero' + "/" + hero.id)
+      }
+
 
 }
