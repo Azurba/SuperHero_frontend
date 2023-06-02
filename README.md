@@ -8,11 +8,13 @@
 
 It is a very simple app with a simpler UI, developed just to practice API calls and microservices
 
-![10](https://github.com/Azurba/SuperHero_frontend/assets/58566178/a130756f-8956-4a60-b37a-0474de8a5b5b)
+![1](https://github.com/Azurba/SuperHero_frontend/assets/58566178/2e6e9fb9-6e6b-445b-af2f-4c52498d81ef)
 
 The back-end microservice is responsible for dealing with the API calls and Database connection using Entity Framework
-![11](https://github.com/Azurba/SuperHero_frontend/assets/58566178/21e31a7f-9a5c-48c5-a759-9a118136b53e)
+
+![2](https://github.com/Azurba/SuperHero_frontend/assets/58566178/0f28b7bf-a84f-4ce5-a4ed-7c78c09ac7ab)
 
 The app uses Microsoft SQL Server to store the information of all super heroes
 
-![12](https://github.com/Azurba/SuperHero_frontend/assets/58566178/377ff871-9940-4a29-b4b4-433f176a2ce4)
+![3](https://github.com/Azurba/SuperHero_frontend/assets/58566178/ecc858a5-427a-4392-8f8c-5d267351312b)
+
