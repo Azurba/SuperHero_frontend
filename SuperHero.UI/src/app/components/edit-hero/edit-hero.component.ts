@@ -19,6 +19,8 @@ export class EditHeroComponent {
     
   }
 
+  // Here we're subscribing the observable and when the result comes back, it will be stored in "heroes" 
+  // which we will send/emit to the parent component (home)
   updateHero(hero:SuperHero){
     this.superHeroService.updateHero(hero).subscribe((heroes)=>this.heroesUpdated.emit(heroes));
   }

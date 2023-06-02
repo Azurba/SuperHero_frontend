@@ -39,16 +39,6 @@ export class SuperHeroService {
     */
       public getSuperHeroes() : Observable<SuperHero[]> {
         return this.http.get<SuperHero[]>('https://localhost:7132/api/SuperHero')
-        /*
-        let hero = new SuperHero();
-        hero.id = 1;
-        hero.name = "Spider man";
-        hero.firstName = "Peter";
-        hero.lastName = "Parker";
-        hero.place = "New York";
-        */
-        //return the hero as an array
-        //return [hero];
       }
 
       public updateHero(hero: SuperHero) : Observable<SuperHero[]> {
